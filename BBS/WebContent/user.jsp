@@ -13,16 +13,17 @@
          <div id="container2">
 	<%
 		String user = "";
-
+	   String SqlId = "";
 		try {
 			user = session.getAttribute("UEmail").toString();
+			SqlId= session.getAttribute("SqlID").toString();
 			
 		} catch (NullPointerException e) {
 			e.getStackTrace();
 		}
 		
-		if (user == null || user.equals("")){
-			response.sendRedirect("index.jsp");
+		if (user == null || user.equals("")||SqlId == null||SqlId.equals("")){
+			response.sendRedirect("login.jsp");
 	%>
 
 
@@ -32,9 +33,6 @@
 	%>
 
 
-
-
-
 	<div class="alert alert-success">
 
 		<nav class="navbar navbar-inverse" role="navigation"> <!--<nav class="navbar navbar-inverse" role="navigation">-->
@@ -42,10 +40,10 @@
 		<ul class="nav nav-pills">
 
 			<li role="presentation"><a href="./index.jsp" target="_blank">首页</a></li>
-			<li role="presentation"><a href="#">发帖</a></li>
-			<li role="presentation"><a href="#">帖子</a></li>
 
-			<li role="presentation"><a href="#">用户中心</a></li>
+			<li role="presentation"><a href="#">帖子列表</a></li>
+			<li role="presentation"><a href="#">发帖</a></li>
+			<li role="presentation"><a href="./userupdate.jsp">用户中心</a></li>
 			<li role="presentation"><a href="#"><span class="label label-success"><%=session.getAttribute("SqlUserName")%></a></li>
 			<li role="presentation"><a href="#">退出</a></li>
 
@@ -55,7 +53,12 @@
 		</nav>
 
 		登录.成功！！ <br> <span class="label label-success"><%=user%></span>
-
+		
+<!-- <ul>
+  <li>...</li>
+</ul>
+ -->
+ <textarea class="form-control" rows="6"></textarea>
 		<br>
 		<br>
 		<br>
@@ -71,7 +74,31 @@
 		<br>
 		<br>
 		<br>
-		<br>		
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+				<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+				
 	</div>
 	<!--  
 <nav class="navbar navbar-inverse" role="navigation">

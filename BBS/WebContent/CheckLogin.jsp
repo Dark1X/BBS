@@ -8,9 +8,16 @@
 <body>
 <%
 
+request.setCharacterEncoding("UTF-8");  
+response.setCharacterEncoding("UTF-8");  
+response.setContentType("text/html; charset=utf-8");  
+//防止出现乱码
+
+
+
 Class.forName("com.mysql.jdbc.Driver");
-String connectSQL="jdbc:mysql://localhost:3306/ss";
-Connection conn=DriverManager.getConnection(connectSQL,"root","root");
+String connectSQL="jdbc:mysql://localhost:3306/soft";
+Connection conn=DriverManager.getConnection(connectSQL,"root","");
   
   
   String sql="select * from user where email=?";
@@ -26,15 +33,16 @@ Connection conn=DriverManager.getConnection(connectSQL,"root","root");
  
    String SqlUserPwd ="";
    String SqlUserName ="";
+   String SqlID ="";
  while(rs.next()){
-
+	SqlID=rs.getString("id");
 	SqlUserPwd=rs.getString("passwd");
 	SqlUserName=rs.getString("username");
 
  }
  
  
- if (UserEmail.equals(null)|| UserPwd==(null) || UserEmail.equals("")|| UserPwd.equals("")){%>
+ if (UserEmail==null|| UserPwd==(null) || UserEmail.equals("")|| UserPwd.equals("")){%>
 
  <jsp:forward page="./login.jsp"></jsp:forward>
  
@@ -45,16 +53,15 @@ Connection conn=DriverManager.getConnection(connectSQL,"root","root");
  if(SqlUserPwd.equals(UserPwd)){
 	  
 	 out.println("登录成功");
+	 session.setAttribute("SqlID", SqlID);
 	 session.setAttribute("UEmail", UserEmail);
 	 session.setAttribute("SqlUserName", SqlUserName);
-	 %>
-	 <jsp:forward page="./user.jsp"></jsp:forward>
-
- <%}else{%>
- 
- <jsp:forward page="./login.jsp"></jsp:forward>
+	 response.sendRedirect("user.jsp");
+}else{
+	response.sendRedirect("login.jsp");
+ //<jsp:forward page="./login.jsp"></jsp:forward>
 	 
- <%
+ 
  }
 	 
  }

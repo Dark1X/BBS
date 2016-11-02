@@ -11,10 +11,10 @@
         #container2 {
 	position:relative;
 /*	border: 1px solid #000;*/
-	width: 29%;
+	width: 20%;
 	height: auto;
 	z-index: 2;
-	left: 35%;
+	left: 40%;
 	top: auto;
 }
         .yingyin{
@@ -29,5 +29,5 @@
 /*	background-color: #FFFFFF;
 background-image: url(../img/shuzi2.gif);*/
     background-size:100%;
-	background-image: url(../img/nv.jpg);
+	background-image: url(../img/bg1.jpg);
 }
