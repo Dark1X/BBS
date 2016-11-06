@@ -3,9 +3,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.css" />
 <link rel="stylesheet" href="./css/usercss.css" />
+
+
 <title>用户中心！</title>
 </head>
 <body>
@@ -13,16 +16,16 @@
          <div id="container2">
 	<%
 		String user = "";
-	   String SqlId = "";
+	   String SqlUserID = "";
 		try {
 			user = session.getAttribute("UEmail").toString();
-			SqlId= session.getAttribute("SqlID").toString();
+			SqlUserID= session.getAttribute("SqlUserID").toString();
 			
 		} catch (NullPointerException e) {
 			e.getStackTrace();
 		}
 		
-		if (user == null || user.equals("")||SqlId == null||SqlId.equals("")){
+		if (user == null || user.equals("")||SqlUserID == null||SqlUserID.equals("")){
 			response.sendRedirect("login.jsp");
 	%>
 
@@ -42,9 +45,12 @@
 			<li role="presentation"><a href="./index.jsp" target="_blank">首页</a></li>
 
 			<li role="presentation"><a href="#">帖子列表</a></li>
-			<li role="presentation"><a href="#">发帖</a></li>
+			<li role="presentation"><a href="./intoupdate.jsp">发帖</a></li>
+			<li role="presentation"><a href="./mytopic.jsp">我的帖子</a></li>
 			<li role="presentation"><a href="./userupdate.jsp">用户中心</a></li>
-			<li role="presentation"><a href="#"><span class="label label-success"><%=session.getAttribute("SqlUserName")%></a></li>
+			<li role="presentation"><a href="#">
+			<span class="label label-success"><%=session.getAttribute("SqlUserName")%></a>
+			</li>
 			<li role="presentation"><a href="#">退出</a></li>
 
 		</ul>
@@ -52,13 +58,13 @@
 		</p>
 		</nav>
 
-		登录.成功！！ <br> <span class="label label-success"><%=user%></span>
-		
-<!-- <ul>
-  <li>...</li>
-</ul>
- -->
- <textarea class="form-control" rows="6"></textarea>
+		<h4>
+		<img alt="逗" src="./img/dou.gif" class="img-circle" />
+		<span class="label label-success">亲，欢迎来到论坛,下面是帖子列表!</span>
+		<img alt="逗" src="./img/dou.gif" class="img-circle" />
+		</h4>
+		<%@include file="./showtopic.jsp" %>
+
 		<br>
 		<br>
 		<br>
@@ -84,22 +90,8 @@
 		<br>
 		<br>
 		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-				<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-				
-	</div>
+
+	
 	<!--  
 <nav class="navbar navbar-inverse" role="navigation">
 

@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>链接</title>
+<title>处理登录</title>
 </head>
 <body>
 <%
@@ -30,19 +30,20 @@ Connection conn=DriverManager.getConnection(connectSQL,"root","");
  st.setString(1, UserEmail);
  
  ResultSet rs=st.executeQuery();
- 
+  String SqlUserID ="";
    String SqlUserPwd ="";
    String SqlUserName ="";
-   String SqlID ="";
+
+   
  while(rs.next()){
-	SqlID=rs.getString("id");
+	SqlUserID=rs.getString("id");
 	SqlUserPwd=rs.getString("passwd");
 	SqlUserName=rs.getString("username");
 
  }
  
  
- if (UserEmail==null|| UserPwd==(null) || UserEmail.equals("")|| UserPwd.equals("")){%>
+ if (UserEmail==null|| UserPwd==null || UserEmail.equals("")|| UserPwd.equals("")){%>
 
  <jsp:forward page="./login.jsp"></jsp:forward>
  
@@ -53,11 +54,17 @@ Connection conn=DriverManager.getConnection(connectSQL,"root","");
  if(SqlUserPwd.equals(UserPwd)){
 	  
 	 out.println("登录成功");
-	 session.setAttribute("SqlID", SqlID);
+	 session.setAttribute("SqlUserID", SqlUserID);//为了用户中心显示用户自己发的帖子
+	 
 	 session.setAttribute("UEmail", UserEmail);
-	 session.setAttribute("SqlUserName", SqlUserName);
+	 
+	 session.setAttribute("SqlUserName", SqlUserName);//为了显示发帖人
+	 
+	
 	 response.sendRedirect("user.jsp");
+	 
 }else{
+	
 	response.sendRedirect("login.jsp");
  //<jsp:forward page="./login.jsp"></jsp:forward>
 	 
@@ -69,13 +76,6 @@ Connection conn=DriverManager.getConnection(connectSQL,"root","");
  st.close();
  conn.close();
   %>
-  <!--  
-  if(SqlUserPwd==UserPwd){
-  
- out.println("ok");
-  
-  }
-   -->
 
 </body>
 </html>

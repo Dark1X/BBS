@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link href="./bootstrap/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="./bootstrap/dist/bootstrap.css" rel="stylesheet" type="text/css" />
+
 <title>链接</title>
 </head>
 <body>
@@ -16,6 +17,7 @@ request.setCharacterEncoding("UTF-8");
 response.setCharacterEncoding("UTF-8");  
 response.setContentType("text/html; charset=utf-8");  
 //防止出现乱码
+
 Class.forName("com.mysql.jdbc.Driver");
 String connectSQL="jdbc:mysql://localhost:3306/soft";
 Connection conn=DriverManager.getConnection(connectSQL,"root","");
@@ -23,8 +25,9 @@ Connection conn=DriverManager.getConnection(connectSQL,"root","");
  String sql="select * from user where id=?";
  PreparedStatement st = conn.prepareStatement(sql);
 
- String SqlID = session.getAttribute("SqlID").toString();
- st.setString(1, SqlID);
+ String UserID = session.getAttribute("SqlUserID").toString();
+ 
+ st.setString(1, UserID);
  
  ResultSet rs=st.executeQuery();
 
@@ -50,10 +53,10 @@ Connection conn=DriverManager.getConnection(connectSQL,"root","");
 <div class="form-group">
     <div class="input-group">
       <div class="input-group-addon">名字:</div>
-      <!-- disabled 
-      <input class="form-control" name="id" type="text" value="" readonly="readonly">
-      -->
-      <input class="form-control" name="username" type="text" value="<%=username %>" readonly="readonly">
+     
+      <input class="form-control" name="id" type="text" value="<%=username %>" readonly="readonly">
+       <!-- disabled  
+      <input class="form-control" name="username" type="text" value="">-->
    <br>
     </div>
   </div>
@@ -68,16 +71,18 @@ Connection conn=DriverManager.getConnection(connectSQL,"root","");
   <div class="form-group">
     <div class="input-group">
        <div class="input-group-addon">邮箱:</div>
-      <input class="form-control" type="text" name="email" placeholder="<%=email %>" value="<%=email %>" />     
+      <input class="form-control" type="text" name="email" placeholder="<%=email %>" value="<%=email %>" readonly="readonly" />     
     </div>
   </div>
 
 <br><br>
 
-<button type="submit" class="btn btn-info">修改</button>
+<button type="submit" class="btn btn-success">修改</button>
 &nbsp;&nbsp;&nbsp;
-<button type="reset" class="btn btn-info">重置</button>
+<button type="reset" class="btn btn-success">重置</button>
+
 </center>
   </form>
+
 </body>
 </html>

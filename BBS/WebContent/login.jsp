@@ -17,7 +17,7 @@
          	<div class="yingyin center">
          		<strong>
          			<font size="6" color="#6495ED">
-         				欢迎登陆First论坛
+         				欢迎登陆论坛
          			</font>
          		</strong>
          	</div>
@@ -40,32 +40,15 @@
   
   <br>
       	
-              <!--  <label for="inputEmail3" class="col-sm-2 control-label">邮箱</label>
-              
-    <div class="col-sm-10">
-           <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="UserEmail">
-    </div>
-  </div>
-  <div class="form-group">
-  	
-    <label for="inputPassword3" class="col-sm-2 control-label">密码</label> 
-    <div class="col-sm-10">	
-      <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="UserPwd">
-      
-    </div>
-    
-  </div>
-  
-<br />
-   -->
+
   <div class="form-group center">
   
   <button type="submit" class="btn btn-primary">登陆</button>
-  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+ ———
   <button type="reset" class="btn btn-primary">重置</button>
-  &nbsp; &nbsp;&nbsp;
+  &nbsp; &nbsp;
   
-     <span class="label btn-default"><a href="./register.htm">没有账号？</a></span>
+     <span class="label btn-default"><a href="./register.jsp">没有账号？</a></span>
  
   </div>
 </form>

@@ -18,7 +18,9 @@ Connection conn=DriverManager.getConnection(connectSQL,"root","");
 
  String sql="update user set username=?,email=?,passwd=? where id=?";
  PreparedStatement st = conn.prepareStatement(sql);
- int id = Integer.parseInt(session.getAttribute("SqlID").toString());
+ 
+ int id = Integer.parseInt(session.getAttribute("SqlUserID").toString());
+ 
  String username = request.getParameter("username");
  String email = request.getParameter("email");
  String passwd = request.getParameter("passwd");

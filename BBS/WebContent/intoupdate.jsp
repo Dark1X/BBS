@@ -46,9 +46,9 @@
 			<li role="presentation"><a href="./index.jsp" target="_blank">首页</a></li>
 
 			<li role="presentation"><a href="./user.jsp">帖子列表</a></li>
-			<li role="presentation"><a href="./intoupdate.jsp">发帖</a></li>
+			<li role="presentation"><a href="#">发帖</a></li>
 			<li role="presentation"><a href="./mytopic.jsp">我的帖子</a></li>
-			<li role="presentation"><a href="#">用户中心</a></li>
+			<li role="presentation"><a href="./userupdate.jsp">用户中心</a></li>
 			<li role="presentation"><a href="#"><span class="label label-success">
 			<%=session.getAttribute("SqlUserName")%></a></li>
 			<li role="presentation"><a href="#">退出</a></li>
@@ -58,50 +58,30 @@
 		</p>
 		</nav>
 		<br>
+		<%@include file="./into.jsp" %>
 		<br>
 		<br>
 		<br>
 		<br>
-		<%@include file="./userup.jsp" %>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
 	</div>
-	<!--  
-<nav class="navbar navbar-inverse" role="navigation">
 
-<p class="text-center presentation">
-<a href="#"><font size="6" color="red">首页</font></a>
-
-<font size="6" color="red">用户中心</font>
-
-<font size="6" color="red">退出</font>
-</p>
-</nav>
--->
 	<%
 		}
 	%>

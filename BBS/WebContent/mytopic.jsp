@@ -3,38 +3,31 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.css" />
 <link rel="stylesheet" href="./css/usercss.css" />
-<title>用户中心！</title>
+
+
+<title>帖子内容</title>
 </head>
 <body>
 <div id="container">
          <div id="container2">
-	<%
-		String user = "";//更加严格判断是否登录
-		
-	   String SqlUserID = "";
-		try {
-			user = session.getAttribute("UEmail").toString();
-			SqlUserID= session.getAttribute("SqlUserID").toString();
-			
-		} catch (NullPointerException e) {
-			e.getStackTrace();
-		}
-		
-		if (user == null || user.equals("") || SqlUserID == null||SqlUserID.equals("")){
-			response.sendRedirect("login.jsp");
+         <% 
+String Uname = session.getAttribute("SqlUserName").toString();//更加严格的判断用户是否登录
+String UID = session.getAttribute("SqlUserID").toString();//更加严格的判断用户是否登录
+
+ 
+ if (Uname==null|| UID==null || Uname.equals("")|| UID.equals("")){
+ %>
+
+ <jsp:forward page="./login.jsp"></jsp:forward>
+ 
+ 
+<% 
+} else {
 	%>
-
-
-
-	<%
-		} else {
-	%>
-
-
-
 
 
 	<div class="alert alert-success">
@@ -47,61 +40,45 @@
 
 			<li role="presentation"><a href="./user.jsp">帖子列表</a></li>
 			<li role="presentation"><a href="./intoupdate.jsp">发帖</a></li>
-			<li role="presentation"><a href="./mytopic.jsp">我的帖子</a></li>
-			<li role="presentation"><a href="#">用户中心</a></li>
-			<li role="presentation"><a href="#"><span class="label label-success">
-			<%=session.getAttribute("SqlUserName")%></a></li>
+			<li role="presentation"><a href="#">我的帖子</a></li>
+			<li role="presentation"><a href="./userupdate.jsp">用户中心</a></li>
+			<li role="presentation"><a href="#">
+			<span class="label label-success"><%=session.getAttribute("SqlUserName")%></a>
+			</li>
 			<li role="presentation"><a href="#">退出</a></li>
 
 		</ul>
 
 		</p>
 		</nav>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<%@include file="./userup.jsp" %>
 
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-	</div>
-	<!--  
-<nav class="navbar navbar-inverse" role="navigation">
+		<h4>
+		<img alt="逗" src="./img/dou.gif" class="img-circle" />
+		<span class="label label-success">亲，欢迎来到论坛,下面是你的所有帖子!</span>
+		<img alt="逗" src="./img/dou.gif" class="img-circle" />
+		</h4>
 
-<p class="text-center presentation">
-<a href="#"><font size="6" color="red">首页</font></a>
+		<%@include file="./mypic.jsp" %>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 
-<font size="6" color="red">用户中心</font>
-
-<font size="6" color="red">退出</font>
-</p>
-</nav>
--->
 	<%
 		}
 	%>
