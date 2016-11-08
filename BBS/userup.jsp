@@ -54,7 +54,7 @@ Connection conn=DriverManager.getConnection(connectSQL,"root","");
     <div class="input-group">
       <div class="input-group-addon">名字:</div>
      
-      <input class="form-control" name="id" type="text" value="<%=username %>" readonly="readonly">
+      <input class="form-control" name="username" type="text" value="<%=username %>" readonly="readonly">
        <!-- disabled  
       <input class="form-control" name="username" type="text" value="">-->
    <br>
