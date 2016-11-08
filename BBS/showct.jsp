@@ -85,7 +85,7 @@ String UserID = session.getAttribute("SqlUserID").toString();//更加严格的�
 	out.println("<tr>");
 	
 	out.println("<tr>");
-	out.println("<td  class='success'>"+"<h4>"+"正文："+"</h4>"+"<pre class='success'>"+TopicContent+"</pre>"+"</td>");
+	out.println("<td  class='success'>"+"<h4>"+"正文："+"</h4>"+"<pre class='success'>"+"<xmp>"+TopicContent+"</xmp>"+"</pre>"+"</td>");
 //out.println("<td  class='success'>"+"<h4>"+"正文："+"</h4>"+TopicContent+"</td>");
 	out.println("</tr>");
 	%>
