@@ -10,6 +10,7 @@
 <table class="table table-hover">
 <tr>
 <td  class="success"><b>标题</b></td>
+<td  class="success"><b>发帖人</b></td>
 <td  class="success"><b>删除</b></td>
 </tr>
 <%
@@ -50,12 +51,13 @@ String UserID = session.getAttribute("AdminID").toString();//更加严格的判�
 	 ResultSet rs=st.executeQuery();
 	
 	   String TopicTitle ="";
+	   String TopicUser ="";
 	   String TopicId ="";
 	  
 	   
 	 while(rs.next()){
 		 TopicTitle=rs.getString("title");
-		 
+		 TopicUser=rs.getString("username");
 		 TopicId=rs.getString("id");
 		
 
@@ -68,7 +70,7 @@ String UserID = session.getAttribute("AdminID").toString();//更加严格的判�
 	<%
 	out.println("<tr>");
 	out.println("<td  class='success'><code>"+TopicTitle+"</code></td>");
-
+	out.println("<td  class='success'>"+"发帖人：<code>"+TopicUser+"</code></td>");
 	out.println("<td><a class='label label-danger' href='./CheckDelete.jsp?id="+TopicId+"'>"+"删除</a></td>");
 	
 	out.println("</tr>");

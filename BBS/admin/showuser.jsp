@@ -12,7 +12,7 @@
 <td  class="success"><h4><b>用户ID</b></h4></td>
 <td  class="success"><h4><b>用户昵称</b></h4></td>
 <td  class="success"><b><h4>清空帖子</h4></b></td>
-<td  class="success"><b><h4>删除用户</h4></b></td>
+<td  class="success"><b><h4>删除用户(永久)</h4></b></td>
 </tr>
 <%
 
