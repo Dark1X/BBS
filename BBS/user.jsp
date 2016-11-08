@@ -103,30 +103,8 @@
 		<br>
 		<br>
 		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
 
-	
-	<!--  
-<nav class="navbar navbar-inverse" role="navigation">
 
-<p class="text-center presentation">
-<a href="#"><font size="6" color="red">首页</font></a>
-
-<font size="6" color="red">用户中心</font>
-
-<font size="6" color="red">退出</font>
-</p>
-</nav>
--->
 	<%
 		}
 	%>

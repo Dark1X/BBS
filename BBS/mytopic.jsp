@@ -54,10 +54,9 @@ String UID = session.getAttribute("SqlUserID").toString();//更加严格的判�
 
 		<h4>
 		<img alt="逗" src="./img/dou.gif" class="img-circle" />
-		<span class="label label-success">亲，下面是你的所有帖子!</span>
-		
+		<span class="label label-success">亲，欢迎来到论坛,下面是你的所有帖子!</span>
 		<img alt="逗" src="./img/dou.gif" class="img-circle" />
-</h4>
+		</h4>
 
 		<%@include file="./mypic.jsp" %>
 		<br>

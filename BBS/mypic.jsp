@@ -6,6 +6,7 @@
 <title>处理登录</title>
 </head>
 <body>
+<br>
 <table class="table table-hover">
 <!--<tr>
 <td  class="success"><h4><b>标题</b></h4></td>
@@ -73,6 +74,8 @@ String UserID = session.getAttribute("SqlUserID").toString();//更加严格的�
 	out.println("<td><a class='label label-danger' href='./CheckDelete.jsp?id="+TopicId+"'>"+"删除</a></td>");
 	
 	out.println("</tr>");
+
+
 	%>
 	</h3>
 	<%
@@ -88,5 +91,10 @@ String UserID = session.getAttribute("SqlUserID").toString();//更加严格的�
   %>
 
  </table>
+ <br>
+  <br>
+   <br>
+    <br>
+     <br>
 </body>
 </html>
