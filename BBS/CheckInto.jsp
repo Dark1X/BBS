@@ -37,7 +37,7 @@ Connection conn=DriverManager.getConnection(connectSQL,"root","");
  
  if (Title==null|| Content==null ||
  Title.equals("")|| Content.equals("") ||
- UserEmail==null || UserEmail.equals("") || Username==null || SqlUserID==null
+ UserEmail==null || UserEmail.equals("") || Username==null ||Username.equals("")|| SqlUserID.equals("")
  )
  {
 	 

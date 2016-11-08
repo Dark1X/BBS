@@ -6,9 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>注册-First论坛</title>
 
-<link rel="stylesheet" href="css/list.css" />
+
 <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.css" />
-<link rel="stylesheet" href="./css/rigister.css" />
+<link rel="stylesheet" href="./css/css.css" />
 
 <script type="text/javascript">
 
@@ -122,7 +122,7 @@
 				</p>
 			</center>
 <form class="form-horizontal has-error has-feedback" role="form" action="CheckRigister.jsp" method="post" onsubmit="return chekAll()">
-<div id="container2">
+<div id="rigister">
 			<div class="form-group">
 				<label for="inputuser" class="col-sm-2 control-label text-danger">名字</label>
 					 <div class="col-sm-10">

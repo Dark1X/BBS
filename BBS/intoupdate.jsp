@@ -5,12 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.css" />
-<link rel="stylesheet" href="./css/usercss.css" />
+<link rel="stylesheet" href="./css/css.css" />
 <title>用户中心！</title>
 </head>
 <body>
 <div id="container">
-         <div id="container2">
+         <div id="user">
 	<%
 		String user = "";//更加严格判断是否登录
 		

@@ -3,15 +3,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.css" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>处理登录</title>
 </head>
 <body>
+
+    
 <table class="table table-hover">
-<!--<tr>
-<td  class="success"><h4><b>标题</b></h4></td>
-<br>
-<td  class="success"><b><h4>发帖人</h4></b></td>
-</tr>-->
+
 <%
 
 request.setCharacterEncoding("UTF-8");  
@@ -103,5 +104,7 @@ String UserID = session.getAttribute("SqlUserID").toString();//更加严格的�
   %>
 
  </table>
+
+
 </body>
 </html>

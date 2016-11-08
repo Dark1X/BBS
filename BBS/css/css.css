@@ -31,3 +31,33 @@
     background-repeat: no-repeat;
 	background-image: url(../img/mei.jpg);
 }
+
+   /*	     #content {
+	position:relative;
+/*	border: 1px solid #000;
+	width: 1%;
+	height: 20%;
+
+	left: 0%;
+	top: 20%;
+}*/
+
+        #rigister {
+	position:relative;
+/*	border: 1px solid #000;*/
+	width: 20%;
+	height: auto;
+	z-index: 2;
+	left: 40%;
+	top: auto;
+}
+
+        #user {
+	position:relative;
+/*	border: 1px solid #000;*/
+	width: 50%;
+	height: auto;
+	z-index: 2;
+	left: 27%;
+	top: auto;
+}
