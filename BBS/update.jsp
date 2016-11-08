@@ -14,7 +14,7 @@ response.setContentType("text/html; charset=utf-8");
 //防止出现乱码
 Class.forName("com.mysql.jdbc.Driver");
 String connectSQL="jdbc:mysql://localhost:3306/soft";
-Connection conn=DriverManager.getConnection(connectSQL,"root","");
+Connection conn=DriverManager.getConnection(connectSQL,"root","qq5201314");
 
  String sql="update user set username=?,email=?,passwd=? where id=?";
  PreparedStatement st = conn.prepareStatement(sql);

@@ -22,7 +22,7 @@ response.setContentType("text/html; charset=utf-8");
 
 Class.forName("com.mysql.jdbc.Driver");
 String connectSQL="jdbc:mysql://localhost:3306/soft";
-Connection conn=DriverManager.getConnection(connectSQL,"root","");
+Connection conn=DriverManager.getConnection(connectSQL,"root","qq5201314");
   
 
 String Username = session.getAttribute("SqlUserName").toString();//更加严格的判断用户是否登录
