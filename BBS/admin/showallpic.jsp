@@ -40,23 +40,19 @@
 <div id="container">
          <div id="container2">
 	<%
-		String user = "";
-	   String SqlUserID = "";
+		String AdminEmail = "";
+	   String AdminID = "";
 		try {
-			user = session.getAttribute("UEmail").toString();
-			SqlUserID= session.getAttribute("SqlUserID").toString();
+			AdminEmail = session.getAttribute("AdminEmail").toString();
+			AdminID= session.getAttribute("AdminID").toString();
 			
 		} catch (NullPointerException e) {
 			e.getStackTrace();
 		}
 		
-		if (user == null || user.equals("")||SqlUserID == null||SqlUserID.equals("")){
+		if (AdminEmail == null || AdminEmail.equals("")|| AdminID == null||AdminID.equals("")){
 			response.sendRedirect("login.jsp");
-	%>
 
-
-
-	<%
 		} else {
 	%>
 
@@ -70,7 +66,7 @@
 			<li role="presentation"><a href="./index.jsp" target="_blank">首页</a></li>
 
 
-			<li role="presentation"><a href="#">用户管理中心</a></li>
+			<li role="presentation"><a href="./user.jsp">用户管理中心</a></li>
 			<li role="presentation"><a href="#">
 			<span class="label label-success"><%=session.getAttribute("AdminName")%></a>
 			</li>
@@ -83,10 +79,14 @@
 
 		<h4>
 		<img alt="逗" src="../img/dou.gif" class="img-circle" />
-		<span class="label label-success">管理员，下面是用户列表!</span>
+		<span class="label label-success">下面是用户所有帖子列表!</span>
 		<img alt="逗" src="../img/dou.gif" class="img-circle" />
+		
+		
 		</h4>
-		<%@include file="./showuser.jsp" %>
+		<a href="./user.jsp">返回用户管理中心</a>
+		<br>
+		<%@include file="./showall.jsp" %>
 
 		<br>
 		<br>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>更新</title>
+<title>删除用户所有帖子</title>
 </head>
 <body>
 <%
@@ -16,19 +16,20 @@ Class.forName("com.mysql.jdbc.Driver");
 String connectSQL="jdbc:mysql://localhost:3306/soft";
 Connection conn=DriverManager.getConnection(connectSQL,"root","");
 
- String sql="DELETE FROM topic WHERE id=?;";
+//删除某个用户的所有帖子
+
+
+ String sql="DELETE FROM topic WHERE userid=?;";
  PreparedStatement st = conn.prepareStatement(sql);
  
- 
- String TicId = request.getParameter("id");
 
- //int id = Integer.parseInt(request.getParameter("id"));
  
-//String id = request.getParameter("id");
+ String TicUserId = request.getParameter("id");
+
  
  
 
- st.setString(1, TicId);
+ st.setString(1, TicUserId);
 
  st.executeUpdate();
  
@@ -36,6 +37,6 @@ Connection conn=DriverManager.getConnection(connectSQL,"root","");
  conn.close();
   %>
  <h1>修改成功！</h1> 
-<% response.sendRedirect("mytopic.jsp"); %>
+<% response.sendRedirect("user.jsp"); %>
 </body>
 </html>

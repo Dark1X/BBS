@@ -3,56 +3,75 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>链接</title>
+<title>处理登录</title>
 </head>
 <body>
 <%
 
+request.setCharacterEncoding("UTF-8");  
+response.setCharacterEncoding("UTF-8");  
+response.setContentType("text/html; charset=utf-8");  
+//防止出现乱码
+
+
+
 Class.forName("com.mysql.jdbc.Driver");
-String connectSQL="jdbc:mysql://localhost:3306/ss";
+String connectSQL="jdbc:mysql://localhost:3306/soft";
 Connection conn=DriverManager.getConnection(connectSQL,"root","");
   
   
-  String sql="select passwd from user_admin where email=?";
+  String sql="select * from admin where adminemail=?";
   
  PreparedStatement st = conn.prepareStatement(sql);
 
- String UserEmail = request.getParameter("UserEmail");
- String UserPwd = request.getParameter("UserPwd");
+ String AdminEmail = request.getParameter("UserEmail");
+ String Pwd = request.getParameter("UserPwd");
+  
+ if (AdminEmail==null|| Pwd==null || AdminEmail.equals("")|| Pwd.equals("")){
+
+%>
+  <jsp:forward page="./login.jsp"></jsp:forward>
  
- st.setString(1, UserEmail);
+ <% }else{
+st.setString(1, AdminEmail);
  
  ResultSet rs=st.executeQuery();
- 
-   String SqlUserPwd ="zszskfnzkjsfzs47646464564645646554655hfzsf";
- 
- while(rs.next()){
+  String AdminID ="";
+   String AdminPwd ="";
+   String AdminName ="";
 
-	SqlUserPwd=rs.getString("passwd");
+   
+ while(rs.next()){
+	 AdminID=rs.getString("id");
+	AdminPwd=rs.getString("adminpasswd");
+	AdminName=rs.getString("adminname");
 
  }
  
- 
- if (UserEmail.equals(null)|| UserPwd.equals(null)){%>
 
- <jsp:forward page="./index.jsp"></jsp:forward>
  
  
-<% 
-}else{
+
+
 	
- if(SqlUserPwd.equals(UserPwd)){
+ if(AdminPwd.equals(Pwd)){
 	  
 	 out.println("登录成功");
-	 session.setAttribute("UEmail", UserEmail);
-	 %>
-	 <jsp:forward page="./user.jsp"></jsp:forward>
-
- <%}else{%>
- 
- <jsp:forward page="./index.jsp"></jsp:forward>
+	 session.setAttribute("AdminID", AdminID);
 	 
- <%
+	 session.setAttribute("AdminEmail", AdminEmail);
+	 
+	 session.setAttribute("AdminName", AdminName);
+	 
+	
+	 response.sendRedirect("user.jsp");
+	 
+}else{
+	
+	response.sendRedirect("login.jsp");
+ //<jsp:forward page="./login.jsp"></jsp:forward>
+	 
+ 
  }
 	 
  }
@@ -60,13 +79,6 @@ Connection conn=DriverManager.getConnection(connectSQL,"root","");
  st.close();
  conn.close();
   %>
-  <!--  
-  if(SqlUserPwd==UserPwd){
-  
- out.println("ok");
-  
-  }
-   -->
 
 </body>
 </html>

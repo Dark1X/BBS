@@ -19,12 +19,11 @@ Connection conn=DriverManager.getConnection(connectSQL,"root","");
  String sql="DELETE FROM topic WHERE id=?;";
  PreparedStatement st = conn.prepareStatement(sql);
  
+
  
  String TicId = request.getParameter("id");
 
- //int id = Integer.parseInt(request.getParameter("id"));
- 
-//String id = request.getParameter("id");
+
  
  
 
@@ -36,6 +35,6 @@ Connection conn=DriverManager.getConnection(connectSQL,"root","");
  conn.close();
   %>
  <h1>修改成功！</h1> 
-<% response.sendRedirect("mytopic.jsp"); %>
+<% response.sendRedirect("user.jsp"); %>
 </body>
 </html>
