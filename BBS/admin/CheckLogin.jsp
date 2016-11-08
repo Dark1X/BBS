@@ -29,7 +29,7 @@ Connection conn=DriverManager.getConnection(connectSQL,"root","");
   
  if (AdminEmail==null|| AdminEmail.equals("")||  Pwd==null ||Pwd.equals("")){
 
-          response.sendRedirect("login.jsp"); 
+          response.sendRedirect("index.jsp"); 
 
  }else{
 	 
@@ -64,7 +64,7 @@ st.setString(1, AdminEmail);
 	 
 }else{
 	
-	response.sendRedirect("login.jsp");
+	response.sendRedirect("index.jsp");
  //<jsp:forward page="./login.jsp"></jsp:forward>
 	 
  
