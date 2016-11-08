@@ -17,6 +17,19 @@
 
 <title>欢迎访问First论坛！</title>
 <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.css" />
+<%
+    //统计访问者代码
+     int number = 0;
+     Object obj=application.getAttribute("number");
+     if(obj==null){
+    	 application.setAttribute("number", String.valueOf(number));
+     }else{
+    	 number=Integer.parseInt(obj.toString());
+    	 number+=1;
+    	 application.setAttribute("number", String.valueOf(number));
+     }
+%>
+
 </head>
 <body>
 <!--
@@ -86,6 +99,11 @@
   </a>
 </div>
 <div class="jumbotron">
+<h4>
+
+欢迎第<font color="red"><%=number%></font>位访问者！
+
+</h4>
   <!-- <p class="text-center presentation"><h1>欢迎访问First论坛！</h1></p> -->
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="http://music.163.com/outchain/player?type=0&id=501511225&auto=1&height=90"></iframe>
   <br>
