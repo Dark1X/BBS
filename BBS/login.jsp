@@ -49,12 +49,12 @@
       
     <div class="input-group">
       <div class="input-group-addon">邮箱</div>
-      <input class="form-control" type="email" placeholder="Input Email"name="UserEmail">
+      <input class="form-control" type="email" placeholder="Input Email" name="UserEmail">
       </div>
       <br>
       <div class="input-group">
       <div class="input-group-addon">密码</div>
-      <input class="form-control" type="password" placeholder="Input PassWord"name="UserPwd">
+      <input class="form-control" type="password" placeholder="Input PassWord" name="UserPwd">
     </div>
 
  
