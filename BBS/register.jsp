@@ -9,48 +9,9 @@
 <link rel="stylesheet" href="css/list.css" />
 <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.css" />
 <link rel="stylesheet" href="./css/rigister.css" />
-<!--  <style type="text/css">
-#top {
-    position: absolute;
-    background-size:100%;
-	background-image: url(img/bg4.jpg);
-	background-repeat: no-repeat;
-	position: absolute;
-	width: 1030px;
-	height: 897px;
-	z-index: 1;
-	left: 450px;
-	top: -19px;
-}
 
-body {
-	
-	/*background-color: #7de9d1;*/
-}
-
-#top2 {
-	position: relative;
-	width: 500px;
-	height: 900px;
-	z-index: 1;
-	left: 200px;
-	top: 57px;
-}
-</style>
--->
 <script type="text/javascript">
-	//function btn1() {
-        //if (1==1) {
-    		//alert('注册成功！即将跳转！');
-    		//location.href = "index.htm";
 
-            //return true;
-
-      //  } else {
-            //return false;
-      //  }
-
-//}
 
     function chekUser(){
         var uName = document.getElementById("userName").value.trim();
