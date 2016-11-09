@@ -109,7 +109,7 @@
 //                  佛祖保佑             永无BUG 
 -->
 <div id="container">
-         
+         <div id="register">
 	<div id="top">
 		<div id="top2">
 			<center>
