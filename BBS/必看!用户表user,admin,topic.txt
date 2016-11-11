@@ -11,10 +11,8 @@
 
 1.建立数据库
 
-CREATE SCHEMA `soft` ;
-
 CREATE SCHEMA `soft` DEFAULT CHARACTER SET utf8 ;
-
+#CREATE SCHEMA `soft` ;
 
 
 
