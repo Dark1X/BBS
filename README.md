@@ -2,9 +2,9 @@
 
 一次HomeWork--BBS论坛....-内附MySQL命令
 
-演示网址：http://bbs.ximcx.cn
+* 演示网址：http://bbs.ximcx.cn
 
-后台地址:http://bbs.ximcx.cn/admin
+* 后台地址:http://bbs.ximcx.cn/admin
 
 * 后台账号：666@yaohuo.me
 
