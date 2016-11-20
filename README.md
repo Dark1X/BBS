@@ -6,8 +6,9 @@
 
 后台地址:http://bbs.ximcx.cn/admin
 
-*后台账号：666@yaohuo.me
-*密码为   yaohuo520
+* 后台账号：666@yaohuo.me
+
+* 密码为   yaohuo520
 
 11.11日,修复背景图片问题
 
